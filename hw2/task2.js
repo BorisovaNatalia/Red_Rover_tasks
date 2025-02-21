@@ -1,22 +1,28 @@
-function checkBracketPairs(inputStr) {
-    let res = true;
-    let countOfOpenedRightBracket = 0;
-    for (let i = 0; i < str.lenght; i++) {
-        switch (inputStr) {
+function checkBracketsPairs(inputStr) {
+    let countOfSimpleRightBracket = 0;
+    let countOfCurlyRightBracket = 0;
+    for (let i = 0; i < inputStr.length; i++) {
+        switch (inputStr[i]) {
             case "(":
-                countOfOpenedRightBracket++;
+                countOfSimpleRightBracket++;
                 break;
             case ")":
-                if (countOfOpenedRightBracket <= 0) {
+                if (countOfSimpleRightBracket-- <= 0) {
                     return false;
                 }
-                else {
-                    countOfOpenedRightBracket--;
+                break;
+            case "{":
+                countOfCurlyRightBracket++;
+                break;
+            case "}":
+                if (countOfCurlyRightBracket-- <= 0) {
+                    return false;
                 }
+                break;
         }
     }
-    return countOfOpenedRightBracket === 0;
-
+    return (countOfSimpleRightBracket === 0) && (countOfCurlyRightBracket === 0);
 }
 
-console.log("123");
+testArr = ['(', ')', '(', ')', ')'];
+console.log(checkBracketsPairs(testArr));
