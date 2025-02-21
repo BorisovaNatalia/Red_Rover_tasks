@@ -1,8 +1,6 @@
 function getCurString(currentCountOfStars, maxCountOfStars) {
-    spaceSymb = " ";
-    starSymb = "*";
     curSpaceCount = (maxCountOfStars - currentCountOfStars) / 2;
-    return spaceSymb.repeat(curSpaceCount) + starSymb.repeat(currentCountOfStars) + spaceSymb.repeat(curSpaceCount);
+    return " ".repeat(curSpaceCount) + "*".repeat(currentCountOfStars);
 }
 
 function printRomb(maxCountOfStars) {
@@ -23,4 +21,4 @@ function printRomb(maxCountOfStars) {
     }
 }
 
-printRomb(2);
+printRomb(7);
