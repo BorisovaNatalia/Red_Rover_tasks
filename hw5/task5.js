@@ -1,0 +1,1 @@
+console.log("Ybrobrubr brabrrbrebr brtbrhbrebr brbbrebrsbrtbr brQbrAbr brebrvbrebrrbr".replaceAll("br", ""));
